@@ -17,10 +17,12 @@ function TeacherProfile() {
 
   return (
     <div className="space-y-20">
-      <div className="w-50% mx-auto space-y-5 bg-blue-950 p-10">
+      <div className="w-50% mx-auto space-y-5 border rounded-lg bg-gray-200 p-10">
+        {/* <div className="w-50% mx-auto space-y-5 bg-blue-950 p-10"> */}
         {teacherData.name && (
           <div className="flex justify-center">
-            <p className="py-3 px-5 rounded-full bg-blue-900 text-2xl">
+            <p className="py-3 px-5 rounded-full bg-blue-700 text-2xl text-white">
+              {/* <p className="py-3 px-5 rounded-full bg-blue-900 text-2xl"> */}
               {teacherData.name.at(0)}
             </p>
           </div>

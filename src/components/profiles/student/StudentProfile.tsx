@@ -23,11 +23,12 @@ function StudentProfile() {
 
   return (
     <div className="space-y-20">
-      <div className="w-50% mx-auto space-y-5 bg-blue-950 p-7">
+      <div className="w-50% mx-auto space-y-5  border rounded-lg bg-gray-200 p-7">
+        {/* <div className="w-50% mx-auto space-y-5 bg-blue-950 p-7"> */}
         {studentData.name && (
           <>
             <div className="flex justify-center items-center space-x-5">
-              <p className="py-3 px-5 rounded-full bg-blue-900 text-2xl">
+              <p className="py-3 px-5 rounded-full bg-blue-700 text-white text-2xl">
                 {studentData.name.at(0)}
               </p>
               {/* <p
@@ -43,58 +44,59 @@ function StudentProfile() {
           </>
         )}
         <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500 text-xs">Student Id</p>
+          <p className="text-black text-xs">Student Id</p>
           <p className="text-sm text-gray-700">{studentData.id || " -"}</p>
         </div>
         {/* <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500  text-xs">Name</p>
+          <p className="text-black  text-xs">Name</p>
           <p className="text-sm">{studentData.name || " -"}</p>
         </div> */}
         <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500  text-xs">Class</p>
+          <p className="text-black  text-xs">Class</p>
           <p className="text-sm">{studentData.class || " -"}</p>
         </div>
 
-        <p className="text-lg text-gray-400 text-center">Cognitive Skills</p>
+        <p className="text-lg text-black text-center">Cognitive Skills</p>
+        {/* <p className="text-lg text-gray-400 text-center">Cognitive Skills</p> */}
 
         <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500  text-xs">Auditory Processing</p>
+          <p className="text-black  text-xs">Auditory Processing</p>
           <p className="text-sm">
             {studentData.cognitiveSkills?.AuditoryProcessing || " -"}
           </p>
         </div>
         <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500  text-xs">Visual Processing</p>
+          <p className="text-black  text-xs">Visual Processing</p>
           <p className="text-sm">
             {studentData.cognitiveSkills?.VisualProcessing || " -"}
           </p>
         </div>
 
-        <p className="text-lg text-gray-400 text-center">Affective Skills</p>
+        <p className="text-lg text-black text-center">Affective Skills</p>
 
         <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500  text-xs">Appreciation</p>
+          <p className="text-black  text-xs">Appreciation</p>
           <p className="text-sm">
             {studentData.affectiveSkills?.appreciation || " -"}
           </p>
         </div>
         <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500  text-xs">Motivation</p>
+          <p className="text-black  text-xs">Motivation</p>
           <p className="text-sm">
             {studentData.affectiveSkills?.motivation || " -"}
           </p>
         </div>
 
-        <p className="text-lg text-gray-400 text-center">Psychometric Skills</p>
+        <p className="text-lg text-black text-center">Psychometric Skills</p>
 
         <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500  text-xs">Mechanical Reasoning</p>
+          <p className="text-black  text-xs">Mechanical Reasoning</p>
           <p className="text-sm">
             {studentData.psychometricSkills?.mechanicalReasoning || " -"}
           </p>
         </div>
         <div className="space-x-20 flex items-center justify-between">
-          <p className="text-gray-500  text-xs">Data Checking</p>
+          <p className="text-black  text-xs">Data Checking</p>
           <p className="text-sm">
             {studentData.psychometricSkills?.dataChecking || " -"}
           </p>

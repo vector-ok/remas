@@ -71,7 +71,7 @@ function Registration(): JSX.Element {
     <div className="m-5 space-y-20">
       <div className="w-1/2 m-auto space-y-5 mb-10">
         <div className="flex justify-center">
-          <p className="text-gray-300">Registration</p>
+          <p className="text-black-secondary">Registration</p>
         </div>
         <div>
           <Input

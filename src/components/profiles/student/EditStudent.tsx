@@ -16,14 +16,14 @@ function EditStudent({ inputs, handleChange, handleSave }: IStudentProps) {
   return (
     <>
       <div>
-        <p className="text-2xl text-black-quat text-center">{inputs.name}</p>
-        <p className="text-xs text-black-quat text-center mb-10">{inputs.id}</p>
+        <p className="text-2xl tect-black text-center">{inputs.name}</p>
+        <p className="text-xs tect-black text-center mb-10">{inputs.id}</p>
       </div>
 
       <div className="m-5 space-y-10">
         <div className="w-1/2 m-auto space-y-5 mb-10">
           <div className="space-y-3">
-            <p className="text-xs text-black-quat">Personal Details</p>
+            <p className="text-xs text-black">Personal Details</p>
             <div>
               <Input
                 placeholder="Name"
@@ -35,7 +35,7 @@ function EditStudent({ inputs, handleChange, handleSave }: IStudentProps) {
           </div>
 
           <div className="space-y-3">
-            <p className="text-xs text-black-quat">Cognitive Skills</p>
+            <p className="text-xs text-black">Cognitive Skills</p>
             <div>
               <Input
                 placeholder="Auditory Processing"
@@ -58,7 +58,7 @@ function EditStudent({ inputs, handleChange, handleSave }: IStudentProps) {
           </div>
 
           <div className="space-y-3">
-            <p className="text-xs text-black-quat">Affective Skills</p>
+            <p className="text-xs text-black">Affective Skills</p>
             <div>
               <Input
                 placeholder="Appreciation"
@@ -79,7 +79,7 @@ function EditStudent({ inputs, handleChange, handleSave }: IStudentProps) {
           </div>
 
           <div className="space-y-3">
-            <p className="text-xs text-black-quat">Psychometric Skills</p>
+            <p className="text-xs text-black">Psychometric Skills</p>
             <div>
               <Input
                 placeholder="mechanical Reasoning"
