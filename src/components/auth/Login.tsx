@@ -1,24 +1,22 @@
-import React, { useCallback, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import ButtonComp from "../../General/Buttons/ButtonComp"
-import CustomSelect from "../../General/Dropdown/CustomSelect"
-import { loginType, students, teachers } from "../../services/constants"
-import { useNavigate } from "react-router-dom"
+import Input from "../../General/Inputs/Input"
 import { useAppDispatch } from "../../app/hooks"
+import { RootState } from "../../app/store"
 import {
-  isTeacherTrue,
-  isTeacherFalse,
-  setSelectedTab,
-  addTeacherData,
-  isRegisterTrue,
-  isLoggedInTrue,
   addStudentData,
+  addTeacherData,
+  isLoggedInTrue,
+  isRegisterTrue,
   isStudentFalse,
   isStudentTrue,
+  isTeacherFalse,
+  isTeacherTrue,
 } from "../../features/settings/settingsSlice"
-import Input from "../../General/Inputs/Input"
-import { RootState } from "../../app/store"
-import { useSelector } from "react-redux"
+import { students, teachers } from "../../services/constants"
 
 const initialInputs = {
   id: "",

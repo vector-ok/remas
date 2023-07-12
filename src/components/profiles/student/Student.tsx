@@ -1,9 +1,7 @@
-import React, { ChangeEvent, useCallback, useEffect, useState } from "react"
-import Input from "../../../General/Inputs/Input"
-import CustomSelect from "../../../General/Dropdown/CustomSelect"
-import { loginType, teacherSubject } from "../../../services/constants"
-import ButtonComp from "../../../General/Buttons/ButtonComp"
+import { ChangeEvent, useCallback, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { ToastContainer, toast } from "react-toastify"
 import { RootState } from "../../../app/store"
 import {
   addStudentData,
@@ -15,11 +13,9 @@ import {
   isStudentFalse,
   isTeacherFalse,
 } from "../../../features/settings/settingsSlice"
-import { ToastContainer, toast } from "react-toastify"
+import { StudentType } from "../../../features/settings/settingsSliceType"
 import EditStudent from "./EditStudent"
 import StudentProfile from "./StudentProfile"
-import { useNavigate } from "react-router-dom"
-import { StudentType } from "../../../features/settings/settingsSliceType"
 
 function Student(): JSX.Element {
   const studentData = useSelector(

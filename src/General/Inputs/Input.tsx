@@ -216,9 +216,7 @@ function Input({
               className={` flex cursor-default items-center justify-start pr-4 transition-all duration-75 ease-in-out ${
                 active || alwaysActive || hasValue ? "opacity-100" : "opacity-0"
               }`}
-            >
-              <PercentageIcon className="h-3.5 w-3.5 fill-current" />
-            </span>
+            ></span>
           ) : (
             appendIcon && (
               <IconContainer show={active || alwaysActive || hasValue}>

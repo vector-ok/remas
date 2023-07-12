@@ -1,22 +1,7 @@
-import React, { useState } from "react"
-import Input from "../../General/Inputs/Input"
-import CustomSelect from "../../General/Dropdown/CustomSelect"
-import { loginType, teachers } from "../../services/constants"
-import ButtonComp from "../../General/Buttons/ButtonComp"
-import { useDispatch, useSelector } from "react-redux"
-import {
-  isTeacherFalse,
-  isTeacherTrue,
-} from "../../features/settings/settingsSlice"
-import { useAppDispatch } from "../../app/hooks"
-import MessageToasts from "../../General/MessageToasts/MessageToasts"
-import { SUCCESS } from "../../helpers/AppConstants"
-import { ToastContainer, toast } from "react-toastify"
+import { useSelector } from "react-redux"
 import "react-toastify/dist/ReactToastify.css"
-import { useNavigate } from "react-router-dom"
-import Login from "../auth/Login"
-import Tabs from "../tabs/Tabs"
 import { RootState } from "../../app/store"
+import Login from "../auth/Login"
 import Registration from "../auth/Registration"
 
 function Home(): JSX.Element {

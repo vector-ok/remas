@@ -1,9 +1,6 @@
-import React, { ChangeEvent, useCallback, useState } from "react"
-import Input from "../../../General/Inputs/Input"
-import CustomSelect from "../../../General/Dropdown/CustomSelect"
-import { loginType, teacherSubject } from "../../../services/constants"
-import ButtonComp from "../../../General/Buttons/ButtonComp"
+import { ChangeEvent, useCallback, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { ToastContainer, toast } from "react-toastify"
 import { RootState } from "../../../app/store"
 import {
   addTeacherData,
@@ -13,7 +10,6 @@ import {
 } from "../../../features/settings/settingsSlice"
 import EditTeacher from "./EditTeacher"
 import TeacherProfile from "./TeacherProfile"
-import { ToastContainer, toast } from "react-toastify"
 
 // const initialInputs = {
 //   id: "",
