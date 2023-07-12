@@ -7,7 +7,6 @@ import React, {
   useState,
 } from "react"
 
-// import { ReactComponent as PercentageIcon } from "../../assets/svg/Settings/PercentageIcon.svg"
 import useClickOutside from "../../hooks/useClickOutside"
 
 // use to generate a unique id for the input
