@@ -53,18 +53,6 @@ function EditTeacher({ inputs, handleChange, handleSave }: ITeacherProps) {
             onChange={(_value) => handleChange("phoneNumber", _value)}
           />
         </div>
-        {/* <div className="w-full">
-          <input
-            className="border-blue"
-            placeholder="DoB"
-            type="date"
-            value={inputs.dob}
-            onChange={(_val) => {
-              console.log("_val is ", _val)
-              handleChange("dob", _val)
-            }}
-          />
-        </div> */}
       </div>
       <div className="flex justify-center">
         <ButtonComp buttonType="primary" color={"blue"} func={handleSave}>
