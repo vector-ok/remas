@@ -1,0 +1,23 @@
+
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className=" ease-in-out text-current stroke-current"
+    >
+      <path
+        d="M11.5195 6.96586L13.9995 4.48584L11.5195 2.00586"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path d="M2 4.48633H14" stroke-linecap="round" stroke-linejoin="round" />
+      <path
+        d="M4.47998 9.0332L2 11.5132L4.47998 13.9932"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path d="M14 11.5137H2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
