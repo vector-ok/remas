@@ -1,11 +1,10 @@
-import Home from "./components/home/Home"
-import Teacher from "./components/profiles/teacher/Teacher"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Tabs from "./components/tabs/Tabs"
-import Details from "./components/details/Details"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 import Registration from "./components/auth/Registration"
 import ClassSelection from "./components/details/ClassSelection"
+import Details from "./components/details/Details"
+import Home from "./components/home/Home"
 import Student from "./components/profiles/student/Student"
+import Teacher from "./components/profiles/teacher/Teacher"
 
 function App(): JSX.Element {
   return (
