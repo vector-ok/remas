@@ -155,14 +155,3 @@ export const students = [
     },
   },
 ]
-
-// export const tabs = [
-//   {
-//     name: "Home",
-//     component: <Login />,
-//   },
-//   {
-//     name: "Teacher",
-//     component: <Teacher />,
-//   },
-// ]
