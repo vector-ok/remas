@@ -35,6 +35,20 @@ const initialState: SettingsState = {
       VisualProcessing: "",
     },
     affectiveSkills: {
+      creativity: {
+        ask: "",
+        connections: "",
+        explore: "",
+        reflect: "",
+      },
+      aestheticsAppreciation: {
+        focus: "",
+        inspiration: "",
+      },
+      initiative: {
+        communication: "",
+        leadership: "",
+      },
       feelings: "",
       appreciation: "",
       motivation: "",
@@ -151,8 +165,6 @@ export const settingsSlice = createSlice({
       action: PayloadAction<StudentType>,
     ) => {
       state.studentDataArray.push(action.payload)
-      // console.log("action teacherDataArray is ", action.payload)
-      // console.log("state teacherDataArray is ", state.teacherData)
     },
     editStudentData: (
       state: SettingsState,

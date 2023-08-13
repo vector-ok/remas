@@ -1,13 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import { useSelector } from "react-redux"
 import { RootState } from "../../../app/store"
 import ButtonComp from "../../../General/Buttons/ButtonComp"
 import { useNavigate } from "react-router-dom"
+import Panel from "../../reusables/Panel"
 
 function StudentProfile() {
   const studentData = useSelector(
     (state: RootState) => state.settings.studentData,
   )
+
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const navigate = useNavigate()
 
@@ -74,17 +77,125 @@ function StudentProfile() {
 
         <p className="text-lg text-black text-center">Affective Skills</p>
 
-        <div className="space-x-20 flex items-center justify-between">
-          <p className="text-black  text-xs">Appreciation</p>
-          <p className="text-sm">
-            {studentData.affectiveSkills?.appreciation || " -"}
-          </p>
-        </div>
-        <div className="space-x-20 flex items-center justify-between">
-          <p className="text-black  text-xs">Motivation</p>
-          <p className="text-sm">
-            {studentData.affectiveSkills?.motivation || " -"}
-          </p>
+        <div>
+          <div className="cursor-pointer" onClick={() => setActiveIndex(0)}>
+            <Panel
+              title="Creativity"
+              isActive={activeIndex === 0}
+              onShow={() => setActiveIndex(0)}
+            >
+              <div className="border-b my-2 border-black-quin" />
+              <div className="space-y-4">
+                <div className="space-x-20 flex items-center justify-between">
+                  <p className="text-black  text-xs">
+                    Interpersonal Communication
+                  </p>
+                  <p className="text-sm">
+                    {studentData.affectiveSkills?.creativity
+                      ? studentData.affectiveSkills?.creativity.ask
+                      : " -"}
+                  </p>
+                </div>
+                <div className="space-x-20 flex items-center justify-between">
+                  <p className="text-black  text-xs">Problem Solving</p>
+                  <p className="text-sm">
+                    {studentData.affectiveSkills?.creativity?.connections
+                      ? studentData.affectiveSkills?.creativity?.connections
+                      : " -"}
+                  </p>
+                </div>
+                <div className="space-x-20 flex items-center justify-between">
+                  <p className="text-black  text-xs">
+                    Creativity and Innovation
+                  </p>
+                  <p className="text-sm">
+                    {studentData.affectiveSkills?.creativity?.explore
+                      ? studentData.affectiveSkills?.creativity?.explore
+                      : " -"}
+                  </p>
+                </div>
+                <div className="space-x-20 flex items-center justify-between">
+                  <p className="text-black  text-xs">Critical Thinking</p>
+                  <p className="text-sm">
+                    {studentData.affectiveSkills?.creativity?.reflect
+                      ? studentData.affectiveSkills?.creativity?.reflect
+                      : " -"}
+                  </p>
+                </div>
+              </div>
+            </Panel>
+          </div>
+
+          <div className="cursor-pointer" onClick={() => setActiveIndex(1)}>
+            <Panel
+              title="Aesthetics Appreciation"
+              isActive={activeIndex === 1}
+              onShow={() => setActiveIndex(1)}
+            >
+              <div className="border-b my-2 border-black-quin" />
+
+              <div className="space-y-4">
+                <div className="space-x-20 flex items-center justify-between">
+                  <p className="text-black  text-xs">Observation</p>
+                  <p className="text-sm">
+                    {studentData.affectiveSkills?.aestheticsAppreciation
+                      ? studentData.affectiveSkills?.aestheticsAppreciation
+                          .focus
+                      : " -"}
+                  </p>
+                </div>
+                <div className="space-x-20 flex items-center justify-between">
+                  <p className="text-black  text-xs">Inspiration</p>
+                  <p className="text-sm">
+                    {studentData.affectiveSkills?.aestheticsAppreciation
+                      ? studentData.affectiveSkills?.aestheticsAppreciation
+                          .inspiration
+                      : " -"}
+                  </p>
+                </div>
+              </div>
+            </Panel>
+          </div>
+
+          <div className="cursor-pointer" onClick={() => setActiveIndex(2)}>
+            <Panel
+              title="Initiative"
+              isActive={activeIndex === 2}
+              onShow={() => setActiveIndex(2)}
+            >
+              <div className="border-b my-2 border-black-quin" />
+
+              <div className="space-y-4">
+                <div className="space-x-20 flex items-center justify-between">
+                  <p className="text-black  text-xs">Communication</p>
+                  <p className="text-sm">
+                    {studentData.affectiveSkills?.initiative
+                      ? studentData.affectiveSkills?.initiative?.communication
+                      : " -"}
+                  </p>
+                </div>
+                <div className="space-x-20 flex items-center justify-between">
+                  <p className="text-black  text-xs">Leadership</p>
+                  <p className="text-sm">
+                    {studentData.affectiveSkills?.initiative
+                      ? studentData.affectiveSkills?.initiative.leadership
+                      : " -"}
+                  </p>
+                </div>
+              </div>
+            </Panel>
+          </div>
+
+          {/* <p className="text-sm text-black-secondary pb-1">Creativity</p>
+          <div className="border-b my-2" />
+          <div className="space-x-20 flex items-center justify-between">
+            <p className="text-black  text-xs">Interpersonal Communication</p>
+            <p className="text-sm">
+              {studentData.affectiveSkills?.creativity
+                ? studentData.affectiveSkills?.creativity.ask
+                : " -"}
+            </p>
+          </div> */}
         </div>
 
         <p className="text-lg text-black text-center">Psychometric Skills</p>

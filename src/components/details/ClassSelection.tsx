@@ -52,7 +52,7 @@ function ClassSelection() {
   return (
     <>
       <div className="flex justify-between items-center mb-20 w-full">
-        <p className="text-3xl">S Selection</p>
+        <p className="text-3xl">Student Selection</p>
         <p
           className="text-sm cursor-pointer hover:text-gray-300"
           onClick={handleBack}
@@ -71,13 +71,15 @@ function ClassSelection() {
         <div className="w-1/2 m-auto space-y-3 mb-10">
           <div className="relative w-full">
             <select
-              placeholder="Select Class"
+              defaultValue="Select Class"
               className="w-full p-2.5 text-black-tertiary bg-white border rounded-lg hover:border-blue shadow-sm outline-none appearance-none focus:border-indigo-600"
               onChange={(e) => handleChange("class", e.target.value)}
             >
-              <option disabled>Class</option>
-              <option>5</option>
-              <option>4</option>
+              <option value="Select Class" disabled>
+                Select Class
+              </option>
+              <option value="5">5</option>
+              <option value="4">4</option>
             </select>
           </div>
           <div>

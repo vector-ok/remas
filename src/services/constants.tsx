@@ -61,19 +61,30 @@ export const students = [
     password: "1234s",
     class: "4",
     cognitiveSkills: {
-      DividedAttention: "C",
-      AuditoryProcessing: "D",
-      VisualProcessing: "A",
+      DividedAttention: "Yes",
+      AuditoryProcessing: "Yes",
+      VisualProcessing: "Yes",
     },
     affectiveSkills: {
-      feelings: "B",
-      appreciation: "E",
-      motivation: "A",
+      creativity: {
+        ask: "No",
+        connections: "No",
+        explore: "Yes",
+        reflect: "Yes",
+      },
+      aestheticsAppreciation: {
+        focus: "No",
+        inspiration: "Yes",
+      },
+      initiative: {
+        communication: "Yes",
+        leadership: "Yes",
+      },
     },
     psychometricSkills: {
-      numericReasoning: "C",
-      mechanicalReasoning: "B",
-      dataChecking: "A",
+      numericReasoning: "No",
+      mechanicalReasoning: "Yes",
+      dataChecking: "Yes",
     },
   },
   {
@@ -82,19 +93,30 @@ export const students = [
     password: "1234s",
     class: "5",
     cognitiveSkills: {
-      DividedAttention: "D",
-      AuditoryProcessing: "B",
-      VisualProcessing: "A",
+      DividedAttention: "No",
+      AuditoryProcessing: "Yes",
+      VisualProcessing: "No",
     },
     affectiveSkills: {
-      feelings: "E",
-      appreciation: "C",
-      motivation: "B",
+      creativity: {
+        ask: "Yes",
+        connections: "No",
+        explore: "No",
+        reflect: "Np",
+      },
+      aestheticsAppreciation: {
+        focus: "Yes",
+        inspiration: "No",
+      },
+      initiative: {
+        communication: "Yes",
+        leadership: "No",
+      },
     },
     psychometricSkills: {
-      numericReasoning: "C",
-      mechanicalReasoning: "A",
-      dataChecking: "A",
+      numericReasoning: "No",
+      mechanicalReasoning: "Yes",
+      dataChecking: "Yes",
     },
   },
   {
@@ -103,19 +125,33 @@ export const students = [
     password: "2345s",
     class: "5",
     cognitiveSkills: {
-      DividedAttention: "E",
-      AuditoryProcessing: "A",
-      VisualProcessing: "A",
+      DividedAttention: "Yes",
+      AuditoryProcessing: "No",
+      VisualProcessing: "Yes",
     },
     affectiveSkills: {
-      feelings: "F",
-      appreciation: "C",
-      motivation: "C",
+      creativity: {
+        ask: "Yes",
+        connections: "Yes",
+        explore: "No",
+        reflect: "Np",
+      },
+      aestheticsAppreciation: {
+        focus: "No",
+        inspiration: "Yes",
+      },
+      initiative: {
+        communication: "Yes",
+        leadership: "Yes",
+      },
+      // feelings: "F",
+      // appreciation: "C",
+      // motivation: "C",
     },
     psychometricSkills: {
-      numericReasoning: "A",
-      mechanicalReasoning: "B",
-      dataChecking: "F",
+      numericReasoning: "Yes",
+      mechanicalReasoning: "Yes",
+      dataChecking: "No",
     },
   },
 ]

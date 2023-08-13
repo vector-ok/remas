@@ -46,40 +46,38 @@ function Student(): JSX.Element {
     name: string,
     inputValue: string | ChangeEvent<HTMLInputElement> | undefined,
   ) => {
-    if (name === "AuditoryProcessing" || name === "VisualProcessing") {
-      return setInputs({
-        ...inputs,
-        cognitiveSkills: {
-          ...inputs.cognitiveSkills,
+    setInputs({
+      ...inputs,
+      cognitiveSkills: {
+        ...inputs.cognitiveSkills,
+        [name]: inputValue,
+      },
+      affectiveSkills: {
+        ...inputs.affectiveSkills,
+        creativity: {
+          ...inputs.affectiveSkills?.creativity,
           [name]: inputValue,
         },
-      } as StudentType)
-    }
-    if (name === "appreciation" || name === "motivation") {
-      return setInputs({
-        ...inputs,
-        affectiveSkills: {
-          ...inputs.affectiveSkills,
+        aestheticsAppreciation: {
+          ...inputs.affectiveSkills?.aestheticsAppreciation,
           [name]: inputValue,
         },
-      } as StudentType)
-    }
-    if (name === "mechanicalReasoning" || name === "dataChecking") {
-      return setInputs({
-        ...inputs,
-        psychometricSkills: {
-          ...inputs.psychometricSkills,
+        initiative: {
+          ...inputs.affectiveSkills?.initiative,
           [name]: inputValue,
         },
-      } as StudentType)
-    }
-    setInputs({ ...inputs, [name]: inputValue })
+      },
+      psychometricSkills: {
+        ...inputs.psychometricSkills,
+        [name]: inputValue,
+      },
+    } as StudentType)
   }
 
   const handleSave = () => {
     dispatch(addStudentData(inputs))
     dispatch(editStudentData(inputs))
-    toast.success("Student Changes saved!", { theme: "colored" })
+    toast.success("Changes saved!", { theme: "colored" })
 
     setTimeout(() => {
       dispatch(isEditResultFalse())

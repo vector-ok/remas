@@ -38,6 +38,20 @@ export type StudentType = {
     VisualProcessing?: string
   }
   affectiveSkills?: {
+    creativity?: {
+      ask?: string
+      connections?: string
+      explore?: string
+      reflect?: string
+    }
+    aestheticsAppreciation?: {
+      focus?: string
+      inspiration?: string
+    }
+    initiative: {
+      communication: string
+      leadership: string
+    }
     feelings?: string
     appreciation?: string
     motivation?: string
