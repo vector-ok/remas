@@ -69,7 +69,7 @@ function Teacher(): JSX.Element {
   return (
     <>
       <div className="flex justify-between items-center mb-20 w-full">
-        <p className="text-3xl">T Profile</p>
+        <p className="text-3xl">Teacher Profile</p>
         <p className="text-sm cursor-pointer hover:text-gray-300">
           {isEditTeacher && <p onClick={handleViewProfile}> View Profile</p>}
 

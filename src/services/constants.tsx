@@ -1,7 +1,3 @@
-import Home from "../components/home/Home"
-import Login from "../components/auth/Login"
-import Teacher from "../components/profiles/teacher/Teacher"
-
 export const loginType = [
   { value: "Admin", text: "Admin" },
   { value: "Teacher", text: "Teacher" },
@@ -144,9 +140,6 @@ export const students = [
         communication: "Yes",
         leadership: "Yes",
       },
-      // feelings: "F",
-      // appreciation: "C",
-      // motivation: "C",
     },
     psychometricSkills: {
       numericReasoning: "Yes",
