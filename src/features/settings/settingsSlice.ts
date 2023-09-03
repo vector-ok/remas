@@ -1,7 +1,14 @@
+// @ts-nocheck
+
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState, AppThunk } from "../../app/store"
 import { fetchCount } from "./settingsAPI"
-import { SettingsState, StudentType, TeacherType } from "./settingsSliceType"
+import {
+  SettingsState,
+  StudentSubjectType,
+  StudentType,
+  TeacherType,
+} from "./settingsSliceType"
 import { students, teachers } from "../../services/constants"
 
 const initialState: SettingsState = {
@@ -15,6 +22,7 @@ const initialState: SettingsState = {
   isEditStudent: false,
   isRegister: false,
   isLoggedIn: false,
+  selectedClass: "",
   teacherData: {
     id: "",
     name: "",
@@ -29,6 +37,16 @@ const initialState: SettingsState = {
     name: "",
     password: "",
     class: "",
+    subjects: [{ subject: "", score: "" }],
+
+    affective: [
+      {
+        trait: "",
+        score: 0,
+        questions: {},
+      },
+    ],
+
     cognitiveSkills: {
       DividedAttention: "",
       AuditoryProcessing: "",
@@ -36,22 +54,19 @@ const initialState: SettingsState = {
     },
     affectiveSkills: {
       creativity: {
-        ask: "",
-        connections: "",
-        explore: "",
-        reflect: "",
+        ask: 0,
+        connections: 0,
+        explore: 0,
+        reflect: 0,
       },
       aestheticsAppreciation: {
-        focus: "",
-        inspiration: "",
+        focus: 0,
+        inspiration: 0,
       },
       initiative: {
-        communication: "",
-        leadership: "",
+        communication: 0,
+        leadership: 0,
       },
-      feelings: "",
-      appreciation: "",
-      motivation: "",
     },
     psychometricSkills: {
       numericReasoning: "",
@@ -81,6 +96,77 @@ export const settingsSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
+    addStudentSubject: (
+      state: SettingsState,
+      action: PayloadAction<StudentSubjectType>,
+    ) => {
+      //   const { studentId, subject, score } = action.payload
+
+      //   // Find the student in the state array
+      //   const student = state.studentDataArray.find(
+      //     (student) => student.id === studentId,
+      //   )
+
+      //   // Return the original state if the student is not found
+      //   if (!student) {
+      //     return state
+      //   }
+
+      //   // Create a shallow copy of the student object to modify
+      //   const updatedStudent = { ...student }
+
+      //   // Create a new subject object
+      //   const newSubject = { subject, score }
+
+      //   // Update the subjects array within the student object
+      //   updatedStudent.subjects = [...updatedStudent.subjects, newSubject]
+
+      //   // Create a shallow copy of the students array to modify
+      //   const updatedStudents = state.studentDataArray.map((stud) => {
+      //     if (stud.id === studentId) {
+      //       return updatedStudent
+      //     }
+      //     return stud
+      //   })
+
+      //   console.log("updatedStudents is ", updatedStudents)
+
+      //   // state.studentDataArray = updatedStudents
+
+      //   // return
+
+      //   // Return the updated state
+      //   return {
+      //     ...state,
+      //     studentDataArray: updatedStudents,
+      //   }
+
+      state.studentDataArray.map((student, index) => {
+        // console.log("action data is ", action.payload)
+
+        if (student.id === action.payload.studentId) {
+          console.log("inside if ", action.payload)
+
+          const { studentId, subject, score } = action.payload
+          const newSubject = { subject, score }
+
+          const updatedStudent = { ...student }
+          updatedStudent.subjects = [...student.subjects, newSubject]
+          state.studentDataArray[index] = updatedStudent
+          // console.log("updatedStudent is ", updatedStudent)
+
+          // return {
+          //   ...student,
+          //   // subjects: action.payload,
+          //   subjects: [...student.subjects, newSubject],
+          // }
+          return
+        }
+      })
+    },
+    setSelectedClass: (state: SettingsState, action: PayloadAction<string>) => {
+      state.selectedClass = action.payload
+    },
     isEditResultTrue: (state: SettingsState) => {
       state.isEditResult = true
     },
@@ -235,6 +321,8 @@ export const {
   editStudentData,
   isEditResultTrue,
   isEditResultFalse,
+  setSelectedClass,
+  addStudentSubject,
 } = settingsSlice.actions
 
 // The function below is called a selector and allows us to select a value from

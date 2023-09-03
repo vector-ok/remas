@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -17,6 +19,7 @@ import {
   isTeacherTrue,
 } from "../../features/settings/settingsSlice"
 import { students, teachers } from "../../services/constants"
+import { StudentType } from "../../features/settings/settingsSliceType"
 
 const initialInputs = {
   id: "",

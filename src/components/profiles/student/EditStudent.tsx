@@ -9,11 +9,22 @@ interface IStudentProps {
   handleChange: (
     name: string,
     inputValue: string | ChangeEvent<HTMLInputElement> | undefined,
+    traitToUpdate?: string | number,
+  ) => void
+  handleChangeAffective: (
+    name: string,
+    inputValue: string | ChangeEvent<HTMLInputElement> | undefined,
+    traitToUpdate?: string | number,
   ) => void
   handleSave: () => void
 }
 
-function EditStudent({ inputs, handleChange, handleSave }: IStudentProps) {
+function EditStudent({
+  inputs,
+  handleChange,
+  handleSave,
+  handleChangeAffective,
+}: IStudentProps) {
   return (
     <>
       <div>
@@ -67,20 +78,32 @@ function EditStudent({ inputs, handleChange, handleSave }: IStudentProps) {
 
             <InputSelect
               defaultValue="Does he/she ask questions and challenge answers?"
-              handleSelect={(_value) => handleChange("ask", _value)}
+              // handleSelect={(_value) => modifyAffective("creativity", "ask", 7)}
+              handleSelect={(_value) =>
+                handleChangeAffective("ask", _value, "creativity")
+              }
             />
             <InputSelect
               defaultValue="Does the student make connections and see relationships in ideas?"
-              handleSelect={(_value) => handleChange("connections", _value)}
+              // handleSelect={(_value) =>
+              //   modifyAffective("creativity", "connections", _value)
+              // }
+              handleSelect={(_value) =>
+                handleChangeAffective("connections", _value, "creativity")
+              }
             />
             <InputSelect
               defaultValue="Does he/she explore ideas?"
-              handleSelect={(_value) => handleChange("explore", _value)}
+              handleSelect={(_value) =>
+                handleChangeAffective("explore", _value, "creativity")
+              }
             />
 
             <InputSelect
               defaultValue="Does he/she reflect critically on ideas and actions?"
-              handleSelect={(_value) => handleChange("reflect", _value)}
+              handleSelect={(_value) =>
+                handleChangeAffective("reflect", _value, "creativity")
+              }
             />
 
             <div className="flex justify-between items-center pt-5">
@@ -92,11 +115,19 @@ function EditStudent({ inputs, handleChange, handleSave }: IStudentProps) {
 
             <InputSelect
               defaultValue="Does the student focus his/her five senses on an object"
-              handleSelect={(_value) => handleChange("focus", _value)}
+              handleSelect={(_value) =>
+                handleChangeAffective("focus", _value, "aestheticsAppreciation")
+              }
             />
             <InputSelect
               defaultValue="Does the student share inspiration of his/her experience about the object of interest?"
-              handleSelect={(_value) => handleChange("inspiration", _value)}
+              handleSelect={(_value) =>
+                handleChangeAffective(
+                  "inspiration",
+                  _value,
+                  "aestheticsAppreciation",
+                )
+              }
             />
 
             <div className="flex justify-between items-center pt-5">
@@ -105,11 +136,101 @@ function EditStudent({ inputs, handleChange, handleSave }: IStudentProps) {
             </div>
             <InputSelect
               defaultValue="Does the student express his/her opinion?"
-              handleSelect={(_value) => handleChange("communication", _value)}
+              handleSelect={(_value) =>
+                handleChangeAffective("communication", _value, "initiative")
+              }
             />
             <InputSelect
               defaultValue="Is the student involved in the teaching process?"
-              handleSelect={(_value) => handleChange("leadership", _value)}
+              handleSelect={(_value) =>
+                handleChangeAffective("leadership", _value, "initiative")
+              }
+            />
+
+            <div className="flex justify-between items-center pt-5">
+              <p className="text-xs text-black">Affective Skills</p>
+              <p className="text-xs text-black-secondary">Honesty</p>
+            </div>
+            <InputSelect
+              defaultValue="Does the student cheat during assessment?"
+              handleSelect={(_value) =>
+                handleChangeAffective("cheat", _value, "honesty")
+              }
+            />
+            <InputSelect
+              defaultValue="Is the student exhibit internal moral values?"
+              handleSelect={(_value) =>
+                handleChangeAffective("moralValues", _value, "honesty")
+              }
+            />
+
+            <div className="flex justify-between items-center pt-5">
+              <p className="text-xs text-black">Affective Skills</p>
+              <p className="text-xs text-black-secondary">Leadership</p>
+            </div>
+            <InputSelect
+              defaultValue="Can the student plan a project by breaking it down to simpler modules, allocate resources and set up a time line to follow"
+              handleSelect={(_value) =>
+                handleChangeAffective("plan", _value, "leadership")
+              }
+            />
+            <InputSelect
+              defaultValue="Can the student reflect on a task considering its positive and negative outcomes, and what to change?"
+              handleSelect={(_value) =>
+                handleChangeAffective("reflect", _value, "leadership")
+              }
+            />
+            <InputSelect
+              defaultValue="Can the student build a team by setting goals, recruiting skilled members and communicating effectively with his/her team members?"
+              handleSelect={(_value) =>
+                handleChangeAffective("buildTeam", _value, "leadership")
+              }
+            />
+            <InputSelect
+              defaultValue="Can the student take and uphold decisions?"
+              handleSelect={(_value) =>
+                handleChangeAffective("decision", _value, "leadership")
+              }
+            />
+            <InputSelect
+              defaultValue="Can the student set measurable, defined and observable short term and long term goals and objectives?"
+              handleSelect={(_value) =>
+                handleChangeAffective("setGoals", _value, "leadership")
+              }
+            />
+            <InputSelect
+              defaultValue="Can the student manage his time effectively by prioritizing its use?"
+              handleSelect={(_value) =>
+                handleChangeAffective("timeManagement", _value, "leadership")
+              }
+            />
+            <InputSelect
+              defaultValue="Can the student use writing and speaking skills to communicate?"
+              handleSelect={(_value) =>
+                handleChangeAffective("communication", _value, "leadership")
+              }
+            />
+            <InputSelect
+              defaultValue="Can the student efficiently and effectively resolve conflicts?"
+              handleSelect={(_value) =>
+                handleChangeAffective(
+                  "conflictResolution",
+                  _value,
+                  "leadership",
+                )
+              }
+            />
+            <InputSelect
+              defaultValue="Does the student respect others point of view and diversities of people?"
+              handleSelect={(_value) =>
+                handleChangeAffective("respectDiversity", _value, "leadership")
+              }
+            />
+            <InputSelect
+              defaultValue="Does the student believe in his/her ability, accept challenges and know his/her limitations? "
+              handleSelect={(_value) =>
+                handleChangeAffective("selfBelieve", _value, "leadership")
+              }
             />
 
             {/* 

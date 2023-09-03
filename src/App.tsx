@@ -5,6 +5,8 @@ import Details from "./components/details/Details"
 import Home from "./components/home/Home"
 import Student from "./components/profiles/student/Student"
 import Teacher from "./components/profiles/teacher/Teacher"
+import ClassSubject from "./components/class/ClassSubject"
+import StudentResult from "./components/result/StudentResult"
 
 function App(): JSX.Element {
   return (
@@ -17,6 +19,8 @@ function App(): JSX.Element {
           <Route path="/details" element={<Details />} />
           <Route path="/selection" element={<ClassSelection />} />
           <Route path="registration" element={<Registration />} />
+          <Route path="class" element={<ClassSubject />} />
+          <Route path="/student-result" element={<StudentResult />} />
         </Routes>
       </Router>
     </div>

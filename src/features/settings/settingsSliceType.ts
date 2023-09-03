@@ -13,6 +13,8 @@ export interface SettingsState {
   studentData: StudentType
   studentDataArray: StudentType[]
   isEditResult: boolean
+  selectedClass: string
+  // studentSubject: StudentSubjectType[]
 }
 
 export type TeacherType = {
@@ -32,6 +34,10 @@ export type StudentType = {
   name: string
   password: string
   class: string
+  disableBtn?: boolean
+  subjects: StudentSubjectType[]
+  affective: AffectiveType[]
+
   cognitiveSkills?: {
     DividedAttention?: string
     AuditoryProcessing?: string
@@ -39,26 +45,59 @@ export type StudentType = {
   }
   affectiveSkills?: {
     creativity?: {
-      ask?: string
-      connections?: string
-      explore?: string
-      reflect?: string
+      ask?: number
+      connections?: number
+      explore?: number
+      reflect?: number
     }
     aestheticsAppreciation?: {
-      focus?: string
-      inspiration?: string
+      focus?: number
+      inspiration?: number
     }
-    initiative: {
-      communication: string
-      leadership: string
+    initiative?: {
+      communication?: number
+      leadership?: number
     }
-    feelings?: string
-    appreciation?: string
-    motivation?: string
+    honesty?: {
+      cheat?: number
+      moralValues?: number
+    }
+    leadership?: {
+      plan?: number
+      reflect?: number
+      buildTeam?: number
+      decision?: number
+      setGoals?: number
+      timeManagement?: number
+      communication?: number
+      conflictResolution?: number
+      respectDiversity?: number
+      selfBelieve?: number
+    }
   }
   psychometricSkills?: {
     numericReasoning?: string
     mechanicalReasoning?: string
     dataChecking?: string
+  }
+}
+
+export type StudentSubjectType = {
+  studentId?: string
+  subject: string
+  score: string
+  ca1?: string
+  ca2?: string
+  exam?: string
+  classAverage?: string
+  grade?: string
+  position?: string
+}
+
+export type AffectiveType = {
+  trait: string
+  score: number
+  questions: {
+    [key: string]: number
   }
 }

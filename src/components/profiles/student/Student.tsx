@@ -33,8 +33,6 @@ function Student(): JSX.Element {
 
   const [inputs, setInputs] = useState<StudentType>(studentData)
 
-  const [dobInput, setDobInput] = useState(new Date())
-
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -45,6 +43,7 @@ function Student(): JSX.Element {
   const handleChange = (
     name: string,
     inputValue: string | ChangeEvent<HTMLInputElement> | undefined,
+    traitToUpdate: string | number | undefined,
   ) => {
     setInputs({
       ...inputs,
@@ -56,22 +55,85 @@ function Student(): JSX.Element {
         ...inputs.affectiveSkills,
         creativity: {
           ...inputs.affectiveSkills?.creativity,
-          [name]: inputValue,
+          [name]: inputValue === "Yes" ? 1 : 0,
         },
         aestheticsAppreciation: {
           ...inputs.affectiveSkills?.aestheticsAppreciation,
-          [name]: inputValue,
+          [name]: inputValue === "Yes" ? 1 : 0,
         },
         initiative: {
           ...inputs.affectiveSkills?.initiative,
           [name]: inputValue,
         },
       },
-      psychometricSkills: {
-        ...inputs.psychometricSkills,
-        [name]: inputValue,
-      },
-    } as StudentType)
+    })
+  }
+
+  const handleChangeAffective = (
+    name: string,
+    inputValue: string | ChangeEvent<HTMLInputElement> | undefined,
+    traitToUpdate?: string | number,
+  ) => {
+    if (traitToUpdate === "creativity") {
+      setInputs({
+        ...inputs,
+        affectiveSkills: {
+          ...inputs.affectiveSkills,
+          creativity: {
+            ...inputs.affectiveSkills?.creativity,
+            [name]: inputValue === "Yes" ? 1 : 0,
+          },
+        },
+      })
+    }
+    if (traitToUpdate === "aestheticsAppreciation") {
+      setInputs({
+        ...inputs,
+        affectiveSkills: {
+          ...inputs.affectiveSkills,
+          aestheticsAppreciation: {
+            ...inputs.affectiveSkills?.aestheticsAppreciation,
+            [name]: inputValue === "Yes" ? 1 : 0,
+          },
+        },
+      })
+    }
+    if (traitToUpdate === "initiative") {
+      setInputs({
+        ...inputs,
+        affectiveSkills: {
+          ...inputs.affectiveSkills,
+          initiative: {
+            ...inputs.affectiveSkills?.initiative,
+            [name]: inputValue === "Yes" ? 1 : 0,
+          },
+        },
+      })
+    }
+    if (traitToUpdate === "honesty") {
+      setInputs({
+        ...inputs,
+        affectiveSkills: {
+          ...inputs.affectiveSkills,
+          honesty: {
+            ...inputs.affectiveSkills?.honesty,
+            [name]: inputValue === "Yes" ? 1 : 0,
+          },
+        },
+      })
+    }
+    if (traitToUpdate === "leadership") {
+      setInputs({
+        ...inputs,
+        affectiveSkills: {
+          ...inputs.affectiveSkills,
+          leadership: {
+            ...inputs.affectiveSkills?.leadership,
+            [name]: inputValue === "Yes" ? 1 : 0,
+          },
+        },
+      })
+    }
   }
 
   const handleSave = () => {
@@ -93,7 +155,8 @@ function Student(): JSX.Element {
   }, [isEditResult, dispatch])
 
   const handleBack = () => {
-    navigate("/selection")
+    // navigate("/selection")
+    navigate("/class")
   }
 
   const handleLogout = () => {
@@ -138,6 +201,7 @@ function Student(): JSX.Element {
         <EditStudent
           inputs={inputs}
           handleChange={handleChange}
+          handleChangeAffective={handleChangeAffective}
           handleSave={handleSave}
         />
       )}

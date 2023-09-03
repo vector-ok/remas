@@ -3,11 +3,14 @@ import "react-toastify/dist/ReactToastify.css"
 import { RootState } from "../../app/store"
 import Login from "../auth/Login"
 import Registration from "../auth/Registration"
+// import { subjects } from "../../services/constants"
 
 function Home(): JSX.Element {
   const isRegister = useSelector(
     (state: RootState) => state.settings.isRegister,
   )
+
+  // console.log("subjects is ", subjects.english)
 
   return (
     <div className="space-y-10">
